@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+ html {
+ 	background-color: #66CCFF;
+
+ }
+
+ h1 {
+ 	background: white;
+ 	position: fixed;
+ 	font-style: italic;
+ 	font-size: 40px;
+ 	position: center;  
+
+ }
+
+p {
+	font-size: 15px;
+}
+
+.single-product {
+	margin-bottom: 30px;
+}

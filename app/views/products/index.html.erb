@@ -1,5 +1,8 @@
 <h1>Products Index</h1>
 
+<%= link_to 'New Product', new_product_path%>
+<br>
+<br>
 <%= form_tag products_path, method: :get, authentication: false, id: 'search-form' do %>
 	<%= text_field_tag :search, params[:search] %>
 	<%= submit_tag "Search" %>
@@ -9,12 +12,9 @@
 	<%= render @products %>
 </div>
 
-<%= link_to 'New Product', new_product_path%>
-<% @products.each do |product| %>
- <p><%= product.name %>, <%= product.description %>, <%= product.formatted_price %>
-	<%= link_to 'Show', product_path(product) %>
-	<%= link_to 'edit', edit_product_path(product) %>
-	<%= link_to 'delete', product_path(product),
-method: :delete, data: { confirm: 'Are you sure?' } %></p>
-<% end %>
+<small>
+	<%= page_entries_info @products %>
+</small>
+<%= paginate @products %>
+
 
